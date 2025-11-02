@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import EventCard from '../components/EventCard';
-import EventRegisterPopup from '../components/EventRegisterPopup';
-import { upcomingEvents, pastEvents } from '../data/dummyData';
+import { useState } from "react";
+import EventCard from "../components/EventCard";
+import EventRegisterPopup from "../components/EventRegisterPopup";
+import { upcomingEvents, pastEvents } from "../data/dummyData";
 
 const Events = () => {
   const [showPast, setShowPast] = useState(false);
@@ -22,8 +22,8 @@ const Events = () => {
               onClick={() => setShowPast(false)}
               className={`px-6 py-2 rounded-md font-medium transition-colors ${
                 !showPast
-                  ? 'bg-school-blue text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? "bg-school-blue text-white"
+                  : "text-gray-700 hover:bg-gray-100"
               }`}
             >
               Upcoming Events
@@ -32,8 +32,8 @@ const Events = () => {
               onClick={() => setShowPast(true)}
               className={`px-6 py-2 rounded-md font-medium transition-colors ${
                 showPast
-                  ? 'bg-school-blue text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? "bg-school-blue text-white"
+                  : "text-gray-700 hover:bg-gray-100"
               }`}
             >
               Past Events
@@ -44,13 +44,15 @@ const Events = () => {
         {/* Events Grid */}
         {!showPast ? (
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Upcoming Events</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+              Upcoming Events
+            </h2>
             {upcomingEvents.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {upcomingEvents.map((event) => (
-                  <EventCard 
-                    key={event.id} 
-                    event={event} 
+                  <EventCard
+                    key={event.id}
+                    event={event}
                     onRegister={(event) => {
                       setSelectedEvent(event);
                       setIsRegisterOpen(true);
@@ -60,13 +62,17 @@ const Events = () => {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No upcoming events at the moment.</p>
+                <p className="text-gray-500 text-lg">
+                  No upcoming events at the moment.
+                </p>
               </div>
             )}
           </div>
         ) : (
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">Past Events</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+              Past Events
+            </h2>
             {pastEvents.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pastEvents.map((event) => (
@@ -75,7 +81,9 @@ const Events = () => {
               </div>
             ) : (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No past events to display.</p>
+                <p className="text-gray-500 text-lg">
+                  No past events to display.
+                </p>
               </div>
             )}
           </div>
@@ -96,4 +104,3 @@ const Events = () => {
 };
 
 export default Events;
-
