@@ -6,8 +6,8 @@ const EventCard = ({ event, isPast = false, onRegister }) => {
       whileHover={{ scale: 1.02 }}
       className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
     >
-      <div className="w-full h-48 bg-gradient-to-r from-school-orange to-orange-400 flex items-center justify-center">
-        <div className="text-white text-6xl font-bold opacity-20">
+      <div className="w-full h-40 md:h-48 bg-gradient-to-r from-school-orange to-orange-400 flex items-center justify-center">
+        <div className="text-white text-5xl md:text-6xl font-bold opacity-20">
           {new Date(event.date).getDate()}
         </div>
       </div>

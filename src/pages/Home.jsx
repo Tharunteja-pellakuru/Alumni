@@ -22,24 +22,24 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Background Image */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[420px] md:h-[560px] lg:h-[700px] xl:h-[760px] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${schoolImage})`,
-            filter: 'blur(2px) brightness(0.9)',
-            transform: 'scale(1.1)'
+            filter: "blur(2px) brightness(0.9)",
+            transform: "scale(1.1)",
           }}
         />
         <div className="absolute inset-0 bg-black/20" />
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-school-blue mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-school-blue mb-6">
             Welcome to Kakatiya School of Excellence Alumni Portal
           </h1>
-          <p className="text-lg md:text-xl text-school-blue mb-8 font-medium">
+          <p className="text-base md:text-lg lg:text-xl text-white mb-8 font-medium">
             Connecting our esteemed alumni to their alma mater and to each
             other.
           </p>
