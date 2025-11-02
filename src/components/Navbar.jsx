@@ -51,8 +51,8 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          {/* Desktop Navigation (visible on lg and up) */}
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -70,13 +70,13 @@ const Navbar = () => {
               <>
                 <button
                   onClick={openLogin}
-                  className="px-6 py-2 bg-school-orange text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
+                  className="px-4 md:px-6 py-2 bg-school-orange text-white rounded-lg hover:bg-orange-600 transition-colors font-medium"
                 >
                   Login
                 </button>
                 <button
                   onClick={openRegister}
-                  className="px-4 py-2 bg-white border border-school-blue text-school-blue rounded-lg hover:bg-blue-50 transition-colors font-medium"
+                  className="px-3 md:px-4 py-2 bg-white border border-school-blue text-school-blue rounded-lg hover:bg-blue-50 transition-colors font-medium"
                 >
                   Join Now
                 </button>
@@ -85,12 +85,12 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowProfileMenu((s) => !s)}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-gray-100"
+                  className="flex items-center space-x-2 px-2 md:px-3 py-2 rounded-md hover:bg-gray-100"
                 >
                   <div className="w-8 h-8 rounded-full bg-school-blue text-white flex items-center justify-center font-semibold">
                     {(user.name && user.name[0]) || user.email[0]}
                   </div>
-                  <span className="text-sm text-gray-700">
+                  <span className="hidden xl:inline text-sm text-gray-700">
                     {user.name || user.email}
                   </span>
                 </button>
@@ -126,8 +126,8 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button (visible below lg) */}
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-school-blue focus:outline-none"
@@ -151,9 +151,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation (visible below lg) */}
         {isOpen && (
-          <div className="md:hidden pb-4">
+          <div className="lg:hidden pb-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
