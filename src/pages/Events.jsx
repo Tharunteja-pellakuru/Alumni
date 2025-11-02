@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import EventCard from '../components/EventCard';
+import EventRegisterPopup from '../components/EventRegisterPopup';
 import { upcomingEvents, pastEvents } from '../data/dummyData';
 
 const Events = () => {
   const [showPast, setShowPast] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   return (
     <div className="min-h-screen py-8">
